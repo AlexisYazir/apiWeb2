@@ -84,7 +84,6 @@ export const login = async (req, res) => {
     const token = await createAccessToken(tokenPayload);
 
   res.cookie("token", token, {
-  httpOnly: true,   // Protege contra accesos desde JavaScript
   sameSite: "None", // Permite que funcione en diferentes dominios (CORS)
 });
 
