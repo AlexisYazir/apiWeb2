@@ -83,11 +83,7 @@ export const login = async (req, res) => {
 
     const token = await createAccessToken(tokenPayload);
 
-    res.cookie("token", token, {
-      httpOnly: true,   // Protege contra accesos desde JavaScript
-      secure: true,     // Solo se enviará en HTTPS
-      sameSite: "None", // Permite que funcione en diferentes dominios
-    });
+  res.cookie("token", token);
 
     res.json({
       _id: userFound._id,
