@@ -85,7 +85,6 @@ export const login = async (req, res) => {
 
   res.cookie("token", token, {
   httpOnly: true,   // Protege contra accesos desde JavaScript
-  secure: false,     // Solo se enviará en HTTPS
   sameSite: "None", // Permite que funcione en diferentes dominios (CORS)
 });
 
